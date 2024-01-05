@@ -4,7 +4,7 @@ Either youtube likes to stop the auotplay feature on channels, or there are some
 
 This detects when a video is done, and clicks the next button for you.
 
-This is somewhat finicky, because I have hard coded xpath's, but as for now it's working. January 2024
+This is somewhat finicky, because I have hard coded xpath's, but as for the videos I am watching that are having this issue, it's working. January 2024
 
 #Installation
 
