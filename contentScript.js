@@ -1,5 +1,4 @@
 console.log("Extension loaded")
-// Load jQuery from the external source
 
 // Parse time in the format "mm:ss"
 function parseTime(timeString) {
