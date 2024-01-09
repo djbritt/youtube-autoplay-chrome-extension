@@ -1,4 +1,5 @@
 console.log("Extension loaded")
+// Load jQuery from the external source
 
 // Parse time in the format "mm:ss"
 function parseTime(timeString) {
@@ -16,7 +17,8 @@ function printNum(){
   var currentTimeXpathExpressions = [
       '//*[@id="movie_player"]/div[33]/div[2]/div[1]/div[1]/span[2]/span[1]',
       '//*[@id="movie_player"]/div[32]/div[2]/div[1]/div[1]/span[2]/span[1]',
-      '//*[@id="movie_player"]/div[31]/div[2]/div[1]/div[1]/span[2]/span[1]'
+      '//*[@id="movie_player"]/div[31]/div[2]/div[1]/div[1]/span[2]/span[1]',
+      '//*[@id="movie_player"]/div[30]/div[2]/div[1]/div[1]/span[2]/span[1]'
       // Add more XPath expressions here
   ];
 
@@ -32,17 +34,18 @@ function printNum(){
       }
   }
 
-  var currentTimeXpathExpressions = [
+  var currentDurationXpathExpressions = [
       '//*[@id="movie_player"]/div[33]/div[2]/div[1]/div[1]/span[2]/span[3]',
       '//*[@id="movie_player"]/div[32]/div[2]/div[1]/div[1]/span[2]/span[3]',
-      '//*[@id="movie_player"]/div[31]/div[2]/div[1]/div[1]/span[2]/span[3]'
+      '//*[@id="movie_player"]/div[31]/div[2]/div[1]/div[1]/span[2]/span[3]',
+      '//*[@id="movie_player"]/div[30]/div[2]/div[1]/div[1]/span[2]/span[3]'
       // Add more XPath expressions here
   ];
 
   var durationElement = null;
 
-  for (var i = 0; i < currentTimeXpathExpressions.length; i++) {
-      durationElement = document.evaluate(currentTimeXpathExpressions[i], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+  for (var i = 0; i < currentDurationXpathExpressions.length; i++) {
+      durationElement = document.evaluate(currentDurationXpathExpressions[i], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
       if (durationElement) {
           // If a valid durationElement is found, break out of the loop
@@ -60,18 +63,19 @@ function printNum(){
   if (currentTime == duration) {
     console.log("end of video reached")
 
-    var currentTimeXpathExpressions = [
+    var currentNextButtonXpathExpressions = [
         '//*[@id="movie_player"]/div[32]/div[2]/div[1]/a[2]',
         '//*[@id="movie_player"]/div[33]/div[2]/div[1]/a[2]',
         '//*[@id="movie_player"]/div[33]/div[2]/div[1]/div[1]/span[2]/span[1]',
-        '//*[@id="movie_player"]/div[31]/div[2]/div[1]/a[2]'
+        '//*[@id="movie_player"]/div[31]/div[2]/div[1]/a[2]',
+        '//*[@id="movie_player"]/div[30]/div[2]/div[1]/a[2]'
         // Add more XPath expressions here
     ];
 
     var nextButton = null;
 
-    for (var i = 0; i < currentTimeXpathExpressions.length; i++) {
-        nextButton = document.evaluate(currentTimeXpathExpressions[i], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    for (var i = 0; i < currentNextButtonXpathExpressions.length; i++) {
+        nextButton = document.evaluate(currentNextButtonXpathExpressions[i], document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
         if (nextButton) {
             // If a valid durationElement is found, break out of the loop
